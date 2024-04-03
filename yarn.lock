@@ -2,14 +2,20 @@
 # yarn lockfile v1
 
 
-csv-parser@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/csv-parser/-/csv-parser-3.0.0.tgz#b88a6256d79e090a97a1b56451f9327b01d710e7"
-  integrity sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==
-  dependencies:
-    minimist "^1.2.0"
+deeks@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/deeks/-/deeks-3.1.0.tgz#ecc47c600bcc6dbda656c6d86bbc96cbe126fd41"
+  integrity sha512-e7oWH1LzIdv/prMQ7pmlDlaVoL64glqzvNgkgQNgyec9ORPHrT2jaOqMtRyqJuwWjtfb6v+2rk9pmaHj+F137A==
 
-minimist@^1.2.0:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
-  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
+doc-path@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/doc-path/-/doc-path-4.1.1.tgz#5be8c1671877f6b719af5a6077c41904be8913ac"
+  integrity sha512-h1ErTglQAVv2gCnOpD3sFS6uolDbOKHDU1BZq+Kl3npPqroU3dYL42lUgMfd5UimlwtRgp7C9dLGwqQ5D2HYgQ==
+
+json-2-csv@^5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/json-2-csv/-/json-2-csv-5.5.1.tgz#2ad4e69d4b2bb4590203948a36f11347a4d7aed9"
+  integrity sha512-KgAtAXTQopRwe90gh8SgjRSxgt9bUWbGAPMo9W0TZLA8SqiQH7khtagFfeEUjG3NBPwJu/+9uX5pMvunKaPvrQ==
+  dependencies:
+    deeks "3.1.0"
+    doc-path "4.1.1"

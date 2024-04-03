@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require('path');
-const csv = require('csv-parser');
+
+const converter = require('json-2-csv');
 
 const column_blacklist = ['hashtag clicks', 'detail expands', 'permalink clicks', 'email tweet', 'dial phone'];
 
@@ -9,16 +10,6 @@ if (argv.length !== 3) process.exit(1);
 
 const file = argv.slice(-1).pop();
 const absPath = path.resolve(file);
-const results = [];
-
-fs.createReadStream(absPath)
-  .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => { processAnalytics(results) });
-
-const processAnalytics = (records) => {
-  console.log(records.map(processRecord));
-};
 
 const formatDate = (date) => {
   let year = date.getFullYear();
@@ -26,7 +17,16 @@ const formatDate = (date) => {
   let day = date.getDate().toString().padStart(2, '0');
 
   return month + '/' + day + '/' + year;
-}
+};
+
+const processAnalytics = (records) => {
+  const newRecords = records.map(processRecord);
+  const newCsv = converter.json2csv(newRecords, {});
+
+  fs.writeFileSync("./output/processed_analytics.csv", newCsv);
+
+  console.log("Processed .csv file, output: ./output/processed_analytics.csv");
+};
 
 const processRecord = record => {
   const r = { ...record };
@@ -42,4 +42,8 @@ const processRecord = record => {
   }
 
   return r;
-}
+};
+
+const csv = fs.readFileSync(absPath, { encoding: 'utf8', flag: 'r' });
+const res = converter.csv2json(csv);
+processAnalytics(res);

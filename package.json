@@ -6,6 +6,6 @@
     "start": "node ./script.js"
   },
   "dependencies": {
-    "csv-parser": "^3.0.0"
+    "json-2-csv": "^5.5.1"
   }
 }
