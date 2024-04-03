@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-cd 
+cd longviewlabs-analytics-processor
 npm install
 ```
 
