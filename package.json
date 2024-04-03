@@ -1,0 +1,11 @@
+{
+  "name": "longviewlabs-analytics-processor",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node ./script.js"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
